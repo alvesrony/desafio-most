@@ -1,0 +1,59 @@
+
+/*************************** Estilos para dispositivos móveis ***************************/
+@media (max-width: 767.98px) {
+
+
+    
+
+}
+/**************************** Estilos para tablets ****************************/
+@media (min-width: 768px) and (max-width: 991.98px) {
+  
+
+}
+
+/**************************** Estilos para monitores ****************************/
+@media (min-width: 992px) {
+
+ 
+}
+
+
+/**************************** Ajustes extras ****************************/
+@media (max-width: 495px) {
+    .carousel-text img {
+        display: none;
+    }
+
+    .main-content .carousel {
+        width: 100%;
+        min-height: 200px;
+    }
+
+}
+
+@media (max-width: 575px) {
+    
+    header .offcanvas.offcanvas-end {
+        margin-top: 100px;
+    }
+
+    .solutions-content {
+        margin: 40px 0;
+        justify-content: center;
+    }
+
+    .solutions-title {
+        font-size: 16px;
+    }
+
+    .solutions-item {
+        height: 315px;
+        width: 100%;
+    }
+
+    .solutions-item:hover {
+        transform: scale(1);
+    }
+}
+

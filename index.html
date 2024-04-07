@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <!-- Meta tags Obrigatórias -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CheckSpeech AI</title>
+    <link rel="icon" href="imagens/icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/1072d648a8.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+    <!-- Animações -->
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+
+    <!-- Estilo customizado -->
+    <link rel="stylesheet" type="text/css" href="css/estilo.css">
+    <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
+
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- js -->
+    <script type="text/javascript" src="js/script.js"></script>
+
+    <!-- Fontes -->
+    <!-- Open Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <!-- Barlow -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <!-- HTML5Shiv -->
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <![endif]-->
+  </head>
+
+  <body>
+
+    <header class="fixed-top">
+      <nav class="navbar navbar-expand-sm bg-body-tertiary fixed-top">
+        <div class="container-fluid container-lg">
+          <a class="navbar-brand" href="index.html"><img src="imagens/logo.png" alt="Logo"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <i id="icon-button" class="bi bi-list"></i>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header connect">
+              <a href="#">
+                <i class="bi bi-person-circle"></i><span class="offcanvas-title" id="offcanvasNavbarLabel">Entre ou cadastre-se</span>
+              </a>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link active underline" aria-current="page" href="#">Soluções</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link underline" href="#">Clientes</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link underline" href="#">Preços</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link underline" href="#">Contato</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <div id="main-container">
+      <div class="main-overlay"></div>
+      <main class="main-content">
+        <div class="carousel-div container-fluid container-lg">
+          <span class="carousel-text row"><img src="imagens/5.svg" class="col-6">
+
+            <div id="carouselExampleAutoplaying" class="carousel slide col-6" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <h4 class="d-flex subtext"><b>O CheckSpeech AI é um conjunto de APIs de conversão de fala em textos.</b></h4>
+                </div>
+                <div class="carousel-item">
+                  <h4 class="d-flex subtext"><b>Mais de 500.000 horas de áudios, transcritos por humanos de uma ampla variedade de idades.</b></h4>
+                </div>
+                <div class="carousel-item">
+                  <h4 class="d-flex subtext"><b>Comece agora mesmo a desfrutar de todas as funcionalidades do CheckSpeech AI sem limitações.</b></h4>
+                </div>
+              </div>
+            </div>
+          </span>
+          <button class="button-try"><i class="bi bi-mic"></i>Experimente</button>
+        </div>
+      </main>
+
+      <section id="solutions">
+        <div class="container-fluid container-lg">
+          <div class="solutions-header">
+            <div class="solutions-image"><img src="imagens/solucoes.png"></div>
+            <h1>Principais <span>recursos</span></h1>
+          </div>
+
+          <div class="solutions-content">
+            <div class="solutions-container row">
+              <div class="solutions-item col-12 col-lg-6">
+                <div class="image-drop">
+                  <img src="imagens/icon-solucoes1.png">
+                  <span>Transcrição de Áudio Assíncrono</span>
+                </div>
+                <div class="solutions-drop">
+                  <p class="solutions-title">Transcrição de Áudio Assíncrono</p>
+                  <p class="solutions-description">API de transcrição de voz assíncrona para áudio pré-gravado. Temos uma das melhores engines de reconhecimento de fala do mundo! O recurso speech-to-text assíncrono é um parceiro estratégico para o seu negócio. Esteja você extraindo insights de áudio ou transcrevendo conteúdo em escala.</p>
+                </div>
+              </div>
+
+              <div class="solutions-item col-12 col-lg-6">
+                <div class="image-drop">
+                  <img src="imagens/icon-solucoes2.png">
+                  <span>Transcrição em tempo real</span>
+                </div>
+                <div class="solutions-drop">
+                  <p class="solutions-title">Transcrição em tempo real</p>
+                  <p class="solutions-description">O recurso live-speech-to-text de transcrição ao vivo possibilita o uso de legendas em tempo real para o seu negócio. Nossas legendas garantem que as palestras e treinamentos ao vivo sejam acessíveis e possam ser arquivadas para uso futuro.</p>
+                </div>
+              </div>
+
+              <div class="solutions-item col-12 col-lg-6">
+                <div class="image-drop">
+                  <img src="imagens/icon-solucoes3.png">
+                  <span>Identificação de Idiomas</span>
+                </div>
+                <div class="solutions-drop">
+                  <p class="solutions-title">Identificação de Idiomas</p>
+                  <p class="solutions-description">Identificação de Idiomas em áudios: Obtendo fala e insights a nível global. Nossa solução tem suporte a 52 idiomas.</p>
+                </div>
+              </div>
+
+              <div class="solutions-item col-12 col-lg-6">
+                <div class="image-drop">
+                  <img src="imagens/icon-solucoes4.png">
+                  <span>Análise de sentimento</span>
+                </div>
+                <div class="solutions-drop">
+                  <p class="solutions-title">Análise de sentimento</p>
+                  <p class="solutions-description">Encontre os momentos mais importantes em trechos de falas, diferencie falas positivas e negativas e tome decisões de negócios mais assertivas com uma compreensão mais profunda.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <section id="clientes">
+        <div class="clients-container container-fluid container-lg">
+          <div class="clients-header">
+            <h1>Quem utiliza nossas soluções</h1>
+          </div>
+          <div class="scrolling-container">
+            <div class="scrolling-content">
+              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente2.svg">
+              <img src="imagens/cliente3.svg">
+              <img src="imagens/cliente4.svg">
+              <img src="imagens/cliente5.svg">
+              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente2.svg">
+            </div>
+            <div class="scrolling-content">
+              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente2.svg">
+              <img src="imagens/cliente3.svg">
+              <img src="imagens/cliente4.svg">
+              <img src="imagens/cliente5.svg">
+              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente2.svg">
+            </div>
+          </div>
+          <div class="scrolling-container">
+            <div class="scrolling-content">
+              <img src="imagens/cliente5.svg">
+              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente2.svg">
+              <img src="imagens/cliente3.svg">
+              <img src="imagens/cliente4.svg">
+              <img src="imagens/cliente5.svg">
+              <img src="imagens/cliente1.svg">
+            </div>
+            <div class="scrolling-content">
+              <img src="imagens/cliente5.svg">
+              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente2.svg">
+              <img src="imagens/cliente3.svg">
+              <img src="imagens/cliente4.svg">
+              <img src="imagens/cliente5.svg">
+              <img src="imagens/cliente1.svg">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="precos">
+        <h1>Detalhes dos Pacotes</h1>
+        <div class="container-precos container-fluid container-lg">
+          <div class="row">
+            <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+              <div class="card-flip">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content">
+                      <div class="image-container"></div>
+
+                      <div class="title">
+                        <span>Beginner</span>
+                      </div>
+
+                      <strong class="more">Ver detalhes</strong>
+
+                      <div class="price">
+                        <span>R$29 mês ou R$328 anual.</span>
+                      </div>
+
+                      <button class="button-try">
+                        <span><i class="bi bi-cart"></i>Comprar</span>
+                      </button>
+                      
+                    </div>
+                  </div>
+                  <div class="front">
+                    <div class="front-content">
+                      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio Assíncrono </b></h6> <span>120 minutos <br>(R$0,20 / minuto excedente)</span>
+                            <hr>
+                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio em tempo real </b></h6> <span>90 minutos <br>(R$0,40 / minuto excedente)</span>
+                          </div>
+                          <div class="carousel-item">
+                            <h6><b><i class="bi bi-dot"></i>Identificação de Idiomas em áudios </b></h6> <span>200 minutos <br>(R$0,05 / minuto excedente)</span>
+                            <hr>
+                            <h6><b><i class="bi bi-dot"></i>Análise de sentimento a partir do áudio </b></h6> <span>120 minutos <br>(R$0,40 / minuto excedente)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <strong class="more">Retornar</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
+              <div class="card-flip card-center">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content">
+                      <div class="image-container"></div>
+
+                      <div class="title">
+                        <span>Business</span>
+                      </div>
+
+                      <strong class="more">Ver detalhes</strong>
+
+                      <div class="price">
+                        <span>R$44 mês ou R$499 anual.</span>
+                      </div>
+
+                      <button class="button-try">
+                        <span><i class="bi bi-cart"></i>Comprar</span>
+                      </button>
+                      
+                    </div>
+                  </div>
+                  <div class="front">
+                    <div class="front-content">
+                      <div id="carouselExampleIndicators2" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators2" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        </div>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio Assíncrono </b></h6> <span>200 minutos <br>(R$0,15 / minuto excedente)</span>
+                            <hr>
+                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio em tempo real </b></h6> <span>120 minutos <br>(R$0,40 / minuto excedente)</span>
+                          </div>
+                          <div class="carousel-item">
+                            <h6><b><i class="bi bi-dot"></i>Identificação de Idiomas em áudios </b></h6> <span>500 minutos <br>(R$0,03 / minuto excedente)</span>
+                            <hr>
+                            <h6><b><i class="bi bi-dot"></i>Análise de sentimento a partir do áudio </b></h6> <span>200 minutos <br>(R$0,35 / minuto excedente)</span>
+                          </div>
+                        </div>
+                      </div>
+                      <strong class="more">Retornar</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-md-4 d-flex justify-content-center">
+              <div class="card-flip card-end">
+                <div class="content">
+                  <div class="back">
+                    <div class="back-content">
+                      <div class="image-container"></div>
+
+                      <div class="title">
+                        <span>Enterprise</span>
+                      </div>
+
+                      <strong class="more">Ver detalhes</strong>
+
+                      <div class="price">
+                        <span>preço sob consulta.</span>
+                      </div>
+
+                      <button class="button-try">
+                        <span><i class="bi bi-cart"></i>Comprar</span>
+                      </button>
+                      
+                    </div>
+                  </div>
+                  <div class="front">
+                    <div class="front-content">        
+                      <div>           
+                        <h6><b><i class="bi bi-dot"></i>Preços especiais para grandes volumes.</b></h6>
+                        <hr>
+                        <h6><b><i class="bi bi-dot"></i>Prioridade no suporte técnico. </b></h6>
+                        <hr>
+                        <h6><b><i class="bi bi-dot"></i>Gestor de conta dedicado. </b></h6>
+                      </div> 
+                      <strong class="more">Retornar</strong>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+
+
+
+
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+  </body>
+
+</html>
