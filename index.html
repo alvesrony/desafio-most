@@ -65,16 +65,35 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link active underline" aria-current="page" href="#">Soluções</a>
+                  <a class="nav-link underline" href="#solutions">Soluções</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline" href="#">Clientes</a>
+                  <a class="nav-link underline" href="#clientes">Clientes</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline" href="#">Preços</a>
+                  <a class="nav-link underline" href="#precos">Preços</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link underline" href="#">Contato</a>
+                  <a class="nav-link underline" href="#contato">Contato</a>
+                </li>
+                <li class="nav-item d-flex d-sm-none">
+                  <div class="container-redes">
+                    <a href="https://github.com/alvesrony/desafio-most" title="Github" target="_blank">
+                      <i class="fa-brands fa-github"></i>
+                    </a>
+                    
+                    <a href="https://www.linkedin.com/in/roniesley-alves-6781b8290/" title="Linkedin" target="_blank">
+                      <i class="fa-brands fa-linkedin"></i>
+                    </a>
+        
+                    <a href="https://www.instagram.com/alvesrony_/" title="Instagram" target="_blank">
+                      <i class="fa-brands fa-instagram"></i>
+                    </a>
+        
+                    <a href="mailto:alvesroniesley@gmail.com" title="Email">
+                      <i class="fa-regular fa-envelope"></i>
+                    </a>
+                  </div>
                 </li>
               </ul>
             </div>
@@ -85,7 +104,7 @@
 
     <div id="main-container">
       <div class="main-overlay"></div>
-      <main class="main-content">
+      <main id="principal" class="main-content">
         <div class="carousel-div container-fluid container-lg">
           <span class="carousel-text row"><img src="imagens/5.svg" class="col-6">
 
@@ -103,7 +122,13 @@
               </div>
             </div>
           </span>
-          <button class="button-try"><i class="bi bi-mic"></i>Experimente</button>
+          <button id="testar" class="button-try"><i class="bi bi-mic"></i>Experimente</button>
+          <div id="transcript-container" class="d-none">
+            <button id="button-x" class="button-try">X</button>
+            <div id="transcript">
+            </div>
+            <button id="startButton" class="button-try">Iniciar Reconhecimento</button>
+          </div>
         </div>
       </main>
 
@@ -116,7 +141,7 @@
 
           <div class="solutions-content">
             <div class="solutions-container row">
-              <div class="solutions-item col-12 col-lg-6">
+              <div class="solutions-item item-1 col-12 col-lg-6">
                 <div class="image-drop">
                   <img src="imagens/icon-solucoes1.png">
                   <span>Transcrição de Áudio Assíncrono</span>
@@ -127,7 +152,7 @@
                 </div>
               </div>
 
-              <div class="solutions-item col-12 col-lg-6">
+              <div class="solutions-item item-2 col-12 col-lg-6">
                 <div class="image-drop">
                   <img src="imagens/icon-solucoes2.png">
                   <span>Transcrição em tempo real</span>
@@ -138,7 +163,7 @@
                 </div>
               </div>
 
-              <div class="solutions-item col-12 col-lg-6">
+              <div class="solutions-item item-3 col-12 col-lg-6">
                 <div class="image-drop">
                   <img src="imagens/icon-solucoes3.png">
                   <span>Identificação de Idiomas</span>
@@ -149,7 +174,7 @@
                 </div>
               </div>
 
-              <div class="solutions-item col-12 col-lg-6">
+              <div class="solutions-item item-4 col-12 col-lg-6">
                 <div class="image-drop">
                   <img src="imagens/icon-solucoes4.png">
                   <span>Análise de sentimento</span>
@@ -356,6 +381,109 @@
           </div>
         </div>
       </section>
+
+      <section id="contato">
+        <div class="container-fluid container-lg">
+          <h1>Entre em contato</h1>
+          <div class="d-flex justify-content-center">
+            <div class="container-contato">
+              <form id="form-contato" method="post">
+                <div class="row">
+                  <div class="col-12 col-sm-6 d-flex justify-content-center">
+                    <div class="input-container">
+                        <input type="text" id="nome" name="nome" autocomplete="off" required>
+                        <label for="nome" class="label">Nome</label>
+                        <div class="input-underline"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 d-flex justify-content-center">
+                    <div class="input-container">
+                      <input type="email" id="email" name="email" autocomplete="off" required>
+                      <label for="email" class="label">E-mail</label>
+                      <div class="input-underline"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 d-flex justify-content-center">
+                    <div class="input-container">
+                      <input type="tel" id="telefone" name="telefone" autocomplete="off" required>
+                      <label for="telefone" class="label">Telefone</label>
+                      <div class="input-underline"></div>
+                    </div>
+                  </div>
+
+                  <div class="col-12 col-sm-6 d-flex justify-content-center align-items-center">
+                    <div class="input-container pais-content">
+                      <label for="pais">País</label>
+                      <select id="pais" name="pais" required>
+                          <option value="">Selecione</option>
+                          <option value="br">Brasil</option>
+                          <option value="us">Estados Unidos</option>
+                          <option value="uk">Reino Unido</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+                  <div class="mensagem-container col-12">
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" required></textarea>
+
+                    <div class="checkbox-container col-12">
+                      <input type="checkbox" id="consentimento" required>
+                      <label for="consentimento">Eu concordo com a Política de Privacidade.</label>
+                    </div>
+
+                    <div class="button-submit">
+                      <button class="button-try" type="submit">Enviar</button>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer id="rodape">
+        <div class="container-fluid container-lg">
+          <div class="container-rodape row">
+            <a href="#solutions" class="link-rodape col-11 col-md-3">Soluções</a>
+            <a href="#clientes" class="link-rodape col-11 col-md-3">Clientes</a>
+            <a href="#precos" class="link-rodape col-11 col-md-3">Preços</a>
+            <a href="#contato" class="link-rodape col-11 col-md-3">Contato</a>
+          </div>
+          
+
+          <div class="container-redes">
+            <a href="https://github.com/alvesrony/desafio-most" title="Github" target="_blank">
+              <i class="fa-brands fa-github"></i>
+            </a>
+            
+            <a href="https://www.linkedin.com/in/roniesley-alves-6781b8290/" title="Linkedin" target="_blank">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://www.instagram.com/alvesrony_/" title="Instagram" target="_blank">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="mailto:alvesroniesley@gmail.com" title="Email">
+              <i class="fa-regular fa-envelope"></i>
+            </a>
+          </div>
+            <div class="link-topo">
+              <a href="#principal" id="top-link" title="Topo">
+              <i class="fa-solid fa-arrow-up"></i>
+              </a>
+            </div>
+
+          <div class="texto_rodape">
+            &copy; 2024 - Roniesley Alves
+          </div>
+        </div>
+      </footer>
     </div>
 
 

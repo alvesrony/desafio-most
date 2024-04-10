@@ -2,7 +2,9 @@
 /*************************** Estilos para dispositivos móveis ***************************/
 @media (max-width: 767.98px) {
 
-
+    a.link-rodape {
+        margin-bottom: 10px;
+    }
     
 
 }
@@ -30,6 +32,18 @@
         min-height: 200px;
     }
 
+    .container-redes a, .link-topo a {
+        font-size: 20px;
+    }
+
+    .link-topo a {
+        bottom: 53px;
+    }
+
+    #transcript-container {
+        width: 100%;
+        height: 380px;
+    }
 }
 
 @media (max-width: 575px) {
