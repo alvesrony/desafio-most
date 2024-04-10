@@ -49,7 +49,7 @@ header .navbar, header a.navbar-brand {
 header .nav-link {
   color: #E63946;
   font-size: 1em;
-  font-family: "Barlow", sans-serif;
+  font-family: 'Barlow', sans-serif;
   font-weight: 600;
   font-style: normal;
   letter-spacing: 1px;
@@ -142,7 +142,7 @@ header .offcanvas.show .nav-item {
   height: calc(100% - 100px);
   width: 100%;
   overflow-y: scroll;
-  background-image: url('../imagens/background-principal1.png');
+  background-image: url('../imagens/background-principal1.avif');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
@@ -260,6 +260,7 @@ button.button-try i {
   align-items: flex-end;
   padding-top: 30px;
   color: #fff;
+  justify-content: center;
 }
 
 .solutions-container {
@@ -277,12 +278,9 @@ button.button-try i {
 }
 
 .solutions-header h1 {
-  margin-left: 15px;
-  font-weight: 600;
-}
-
-.solutions-header h1 span {
-  color: #E63946;
+  font-weight: 800;
+  display: flex;
+  justify-content: center;
 }
 
 .solutions-content {
@@ -312,19 +310,19 @@ button.button-try i {
 }
 
 .item-1 {
-  background-image: url("../imagens/recursos1.png");
+  background-image: url("../imagens/recursos1.avif");
 }
 
 .item-2 {
-  background-image: url("../imagens/recursos2.png");
+  background-image: url("../imagens/recursos2.avif");
 }
 
 .item-3 {
-  background-image: url("../imagens/recursos3.png");
+  background-image: url("../imagens/recursos3.avif");
 }
 
 .item-4 {
-  background-image: url("../imagens/recursos4.png");
+  background-image: url("../imagens/recursos4.avif");
 }
 
 .solutions-item .image-drop {
@@ -393,6 +391,7 @@ button.button-try i {
 #clientes {
   background-color: #181818;
   padding-bottom: 30px;
+  height: 406px;
 }
 
 .clients-header {
@@ -412,6 +411,7 @@ button.button-try i {
   overflow: hidden;
   position: relative;
   display: flex;
+  margin: 43px 0;
 }
 
 .scrolling-content {
@@ -422,8 +422,8 @@ button.button-try i {
 }
 
 .scrolling-content img {
-  padding-right: 20px;
-  width: 200px;
+  margin-right: 50px;
+  width: 180px;
   -webkit-user-drag: none;
 }
 
@@ -450,7 +450,7 @@ button.button-try i {
 
 #precos h1, #contato h1 {
   padding-bottom: 30px;
-  font-weight: 600;
+  font-weight: 800;
   display: flex;
   justify-content: center;
 }
@@ -548,7 +548,7 @@ button.button-try i {
 }
 
 .image-container {
-  background-image: url('../imagens/plano1.jpg');
+  background-image: url('../imagens/plano1.avif');
   background-size: cover;
   background-position: center;
   height: 150px;
@@ -556,11 +556,11 @@ button.button-try i {
 }
 
 .card-center .image-container {
-  background-image: url('../imagens/plano2.jpg');
+  background-image: url('../imagens/plano2.avif');
 }
 
 .card-end .image-container {
-  background-image: url('../imagens/plano3.jpg');
+  background-image: url('../imagens/plano3.avif');
 }
 
 .title span {
@@ -621,9 +621,9 @@ button.button-try i {
 .input-container {
   position: relative;
   margin: 50px 0;
-  width: 200px;
   display: flex;
   align-items: flex-end;
+  min-width: 205px;
 }
 
 .pais-content {
@@ -643,6 +643,7 @@ button.button-try i {
   padding: 9px 0;
   background-color: transparent;
   outline: none;
+  min-width: 255px;
 }
 
 .input-container .label {
