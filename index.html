@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
   <head>
 
     <!-- Meta tags Obrigatórias -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Transcrição rápida e precisa de áudio em texto. Converta suas gravações em documentos facilmente editáveis. Experimente nossa plataforma de transcrição de fala em texto hoje!">
 
     <title>CheckSpeech AI</title>
     <link rel="icon" href="imagens/icon.webp">
@@ -12,21 +13,21 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
-    <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/1072d648a8.js" crossorigin="anonymous"></script>
-
-    <!-- Bootstrap icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-
     <!-- Estilo customizado -->
     <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" type="text/css" href="css/mediaqueries.css">
 
     <!-- jquery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
     <!-- js -->
-    <script type="text/javascript" src="js/script.js"></script>
+    <script defer type="text/javascript" src="js/script.js"></script>
+
+    <!-- Captcha -->
+    <script src="https://www.google.com/recaptcha/api.js?hl=pt-BR" async defer></script>
+
+    <!-- Bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
     <!-- Fontes -->
     <!-- Open Sans -->
@@ -34,8 +35,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
     <!-- Barlow -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
 
     <!-- HTML5Shiv -->
@@ -46,64 +45,65 @@
 
   <body>
 
-    <header class="fixed-top">
-      <nav class="navbar navbar-expand-sm bg-body-tertiary fixed-top">
-        <div class="container-fluid container-lg">
-          <a class="navbar-brand" href="index.html"><img src="imagens/logo.webp" alt="Logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-            <i id="icon-button" class="bi bi-list"></i>
-          </button>
-          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-            <div class="offcanvas-header connect">
-              <a href="#">
-                <i class="bi bi-person-circle"></i><span class="offcanvas-title" id="offcanvasNavbarLabel">Entre ou cadastre-se</span>
-              </a>
-            </div>
-            <div class="offcanvas-body">
-              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                  <a class="nav-link underline" href="#solutions">Soluções</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline" href="#clientes">Clientes</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline" href="#precos">Preços</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link underline" href="#contato">Contato</a>
-                </li>
-                <li class="nav-item d-flex d-sm-none">
-                  <div class="container-redes">
-                    <a href="https://github.com/alvesrony/desafio-most" title="Github" target="_blank">
-                      <i class="fa-brands fa-github"></i>
-                    </a>
-                    
-                    <a href="https://www.linkedin.com/in/roniesley-alves-6781b8290/" title="Linkedin" target="_blank">
-                      <i class="fa-brands fa-linkedin"></i>
-                    </a>
-        
-                    <a href="https://www.instagram.com/alvesrony_/" title="Instagram" target="_blank">
-                      <i class="fa-brands fa-instagram"></i>
-                    </a>
-        
-                    <a href="mailto:alvesroniesley@gmail.com" title="Email">
-                      <i class="fa-regular fa-envelope"></i>
-                    </a>
-                  </div>
-                </li>
-              </ul>
+    <div class="loader">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    
+    <div id="main-container">
+      <header class="fixed-top">
+        <nav class="navbar navbar-expand-sm bg-body-tertiary fixed-top">
+          <div class="container-fluid container-lg">
+            <a class="navbar-brand" href="index.html"><img src="imagens/logo.webp" width="136" height="60px" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+              <i id="icon-button" class="bi bi-list"></i>
+            </button>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+              <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                  <li class="nav-item">
+                    <a class="nav-link underline" href="#solutions">Soluções</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link underline" href="#clientes">Clientes</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link underline" href="#precos">Preços</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link underline" href="#contato">Contato</a>
+                  </li>
+                  <li class="nav-item d-flex d-sm-none">
+                    <div class="container-redes">
+                      <a href="https://github.com/alvesrony/desafio-most" title="Github" target="_blank">
+                        <i class="bi bi-github"></i>
+                      </a>
+                      
+                      <a href="https://www.linkedin.com/in/roniesley-alves-6781b8290/" title="Linkedin" target="_blank">
+                        <i class="bi bi-linkedin"></i>
+                      </a>
+          
+                      <a href="https://www.instagram.com/alvesrony_/" title="Instagram" target="_blank">
+                        <i class="bi bi-instagram"></i>
+                      </a>
+          
+                      <a href="mailto:alvesroniesley@gmail.com" title="Email">
+                        <i class="bi bi-envelope"></i>
+                      </a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
-        </div>
-      </nav>
-    </header>
+        </nav>
+      </header>
 
-    <div id="main-container">
       <div class="main-overlay"></div>
       <main id="principal" class="main-content">
         <div class="carousel-div container-fluid container-lg">
-          <span class="carousel-text row"><img src="imagens/5.svg" class="col-6">
+          <span class="carousel-text row"><img src="imagens/5.svg" width="468" height="266" class="col-6" alt="Figura">
 
             <div id="carouselExampleAutoplaying" class="carousel slide col-6" data-bs-ride="carousel">
               <div class="carousel-inner">
@@ -132,14 +132,14 @@
       <section id="solutions">
         <div class="container-fluid container-lg">
           <div class="solutions-header">
-            <h1>Principais recursos</h1>
+            <h1>Principais <span class="color-text"> recursos</span></h1>
           </div>
 
           <div class="solutions-content">
             <div class="solutions-container row">
               <div class="solutions-item item-1 col-12 col-lg-6">
                 <div class="image-drop">
-                  <img src="imagens/icon-solucoes1.webp">
+                  <img src="imagens/icon-solucoes1.webp" width="65" height="65" alt="Informações transcrição de áudio assíncrono">
                   <span>Transcrição de Áudio Assíncrono</span>
                 </div>
                 <div class="solutions-drop">
@@ -150,7 +150,7 @@
 
               <div class="solutions-item item-2 col-12 col-lg-6">
                 <div class="image-drop">
-                  <img src="imagens/icon-solucoes2.webp">
+                  <img src="imagens/icon-solucoes2.webp" width="65" height="65" alt="Informações transcrição em tempo real">
                   <span>Transcrição em tempo real</span>
                 </div>
                 <div class="solutions-drop">
@@ -161,7 +161,7 @@
 
               <div class="solutions-item item-3 col-12 col-lg-6">
                 <div class="image-drop">
-                  <img src="imagens/icon-solucoes3.webp">
+                  <img src="imagens/icon-solucoes3.webp" width="65" height="65" alt="Informações identificação de idiomas">
                   <span>Identificação de Idiomas</span>
                 </div>
                 <div class="solutions-drop">
@@ -172,7 +172,7 @@
 
               <div class="solutions-item item-4 col-12 col-lg-6">
                 <div class="image-drop">
-                  <img src="imagens/icon-solucoes4.webp">
+                  <img src="imagens/icon-solucoes4.webp" width="65" height="65" alt="Informações análise de sentimento">
                   <span>Análise de sentimento</span>
                 </div>
                 <div class="solutions-drop">
@@ -189,53 +189,53 @@
       <section id="clientes">
         <div class="clients-container container-fluid container-lg">
           <div class="clients-header">
-            <h1>Quem utiliza nossas soluções</h1>
+            <h1>Quem utiliza <span class="color-text"> nossas soluções</span></h1>
           </div>
           <div class="scrolling-container">
             <div class="scrolling-content">
-              <img src="imagens/cliente1.svg">
-              <img src="imagens/cliente2.svg">
-              <img src="imagens/cliente3.svg">
-              <img src="imagens/cliente4.svg">
-              <img src="imagens/cliente5.svg">
-              <img src="imagens/cliente1.svg">
-              <img src="imagens/cliente2.svg">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
+              <img src="imagens/cliente2.svg" width="180" height="59" alt="Imagem Berlin">
+              <img src="imagens/cliente3.svg" width="180" height="34" alt="Imagem Delaware">
+              <img src="imagens/cliente4.svg" width="180" height="49" alt="Imagem Syd">
+              <img src="imagens/cliente5.svg" width="180" height="83" alt="Imagem Ebooks">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
+              <img src="imagens/cliente2.svg" width="180" height="59" alt="Imagem Berlin">
             </div>
             <div class="scrolling-content">
-              <img src="imagens/cliente1.svg">
-              <img src="imagens/cliente2.svg">
-              <img src="imagens/cliente3.svg">
-              <img src="imagens/cliente4.svg">
-              <img src="imagens/cliente5.svg">
-              <img src="imagens/cliente1.svg">
-              <img src="imagens/cliente2.svg">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
+              <img src="imagens/cliente2.svg" width="180" height="59" alt="Imagem Berlin">
+              <img src="imagens/cliente3.svg" width="180" height="34" alt="Imagem Delaware">
+              <img src="imagens/cliente4.svg" width="180" height="49" alt="Imagem Syd">
+              <img src="imagens/cliente5.svg" width="180" height="83" alt="Imagem Ebooks">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
+              <img src="imagens/cliente2.svg" width="180" height="59" alt="Imagem Berlin">
             </div>
           </div>
           <div class="scrolling-container">
             <div class="scrolling-content">
-              <img src="imagens/cliente5.svg">
-              <img src="imagens/cliente1.svg">
-              <img src="imagens/cliente2.svg">
-              <img src="imagens/cliente3.svg">
-              <img src="imagens/cliente4.svg">
-              <img src="imagens/cliente5.svg">
-              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente5.svg" width="180" height="83" alt="Imagem Ebooks">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
+              <img src="imagens/cliente2.svg" width="180" height="59" alt="Imagem Berlin">
+              <img src="imagens/cliente3.svg" width="180" height="34" alt="Imagem Delaware">
+              <img src="imagens/cliente4.svg" width="180" height="49" alt="Imagem Syd">
+              <img src="imagens/cliente5.svg" width="180" height="83" alt="Imagem Ebooks">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
             </div>
             <div class="scrolling-content">
-              <img src="imagens/cliente5.svg">
-              <img src="imagens/cliente1.svg">
-              <img src="imagens/cliente2.svg">
-              <img src="imagens/cliente3.svg">
-              <img src="imagens/cliente4.svg">
-              <img src="imagens/cliente5.svg">
-              <img src="imagens/cliente1.svg">
+              <img src="imagens/cliente5.svg" width="180" height="83" alt="Imagem Ebooks">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
+              <img src="imagens/cliente2.svg" width="180" height="59" alt="Imagem Berlin">
+              <img src="imagens/cliente3.svg" width="180" height="34" alt="Imagem Delaware">
+              <img src="imagens/cliente4.svg" width="180" height="49" alt="Imagem Syd">
+              <img src="imagens/cliente5.svg" width="180" height="83" alt="Imagem Ebooks">
+              <img src="imagens/cliente1.svg" width="180" height="21" alt="Imagem Amsterdam">
             </div>
           </div>
         </div>
       </section>
 
       <section id="precos">
-        <h1>Detalhes dos Pacotes</h1>
+        <h1>Detalhes dos <span class="color-text"> Pacotes</span></h1>
         <div class="container-precos container-fluid container-lg">
           <div class="row">
             <div class="col-12 col-md-4 d-flex justify-content-center mb-4">
@@ -270,14 +270,14 @@
                         </div>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio Assíncrono </b></h6> <span>120 minutos <br>(R$0,20 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Transcrição de Áudio Assíncrono </b></div> <span>120 minutos <br>(R$0,20 / minuto excedente)</span>
                             <hr>
-                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio em tempo real </b></h6> <span>90 minutos <br>(R$0,40 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Transcrição de Áudio em tempo real </b></div> <span>90 minutos <br>(R$0,40 / minuto excedente)</span>
                           </div>
                           <div class="carousel-item">
-                            <h6><b><i class="bi bi-dot"></i>Identificação de Idiomas em áudios </b></h6> <span>200 minutos <br>(R$0,05 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Identificação de Idiomas em áudios </b></div> <span>200 minutos <br>(R$0,05 / minuto excedente)</span>
                             <hr>
-                            <h6><b><i class="bi bi-dot"></i>Análise de sentimento a partir do áudio </b></h6> <span>120 minutos <br>(R$0,40 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Análise de sentimento a partir do áudio </b></div> <span>120 minutos <br>(R$0,40 / minuto excedente)</span>
                           </div>
                         </div>
                       </div>
@@ -319,14 +319,14 @@
                         </div>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio Assíncrono </b></h6> <span>200 minutos <br>(R$0,15 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Transcrição de Áudio Assíncrono </b></div> <span>200 minutos <br>(R$0,15 / minuto excedente)</span>
                             <hr>
-                            <h6><b><i class="bi bi-dot"></i>Transcrição de Áudio em tempo real </b></h6> <span>120 minutos <br>(R$0,40 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Transcrição de Áudio em tempo real </b></div> <span>120 minutos <br>(R$0,40 / minuto excedente)</span>
                           </div>
                           <div class="carousel-item">
-                            <h6><b><i class="bi bi-dot"></i>Identificação de Idiomas em áudios </b></h6> <span>500 minutos <br>(R$0,03 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Identificação de Idiomas em áudios </b></div> <span>500 minutos <br>(R$0,03 / minuto excedente)</span>
                             <hr>
-                            <h6><b><i class="bi bi-dot"></i>Análise de sentimento a partir do áudio </b></h6> <span>200 minutos <br>(R$0,35 / minuto excedente)</span>
+                            <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Análise de sentimento a partir do áudio </b></div> <span>200 minutos <br>(R$0,35 / minuto excedente)</span>
                           </div>
                         </div>
                       </div>
@@ -363,11 +363,11 @@
                   <div class="front">
                     <div class="front-content">        
                       <div>           
-                        <h6><b><i class="bi bi-dot"></i>Preços especiais para grandes volumes.</b></h6>
+                        <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Preços especiais para grandes volumes.</b></div>
                         <hr>
-                        <h6><b><i class="bi bi-dot"></i>Prioridade no suporte técnico. </b></h6>
+                        <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Prioridade no suporte técnico. </b></div>
                         <hr>
-                        <h6><b><i class="bi bi-dot"></i>Gestor de conta dedicado. </b></h6>
+                        <div class="titulo-pacotes"><b><i class="bi bi-dot"></i>Gestor de conta dedicado. </b></div>
                       </div> 
                       <strong class="more">Retornar</strong>
                     </div>
@@ -381,10 +381,10 @@
 
       <section id="contato">
         <div class="container-fluid container-lg">
-          <h1>Entre em contato</h1>
+          <h1>Entre em <span class="color-text"> contato</span></h1>
           <div class="d-flex justify-content-center">
             <div class="container-contato">
-              <form id="form-contato" method="post">
+              <form id="form-contato" action="processa_envio.php" method="post">
                 <div class="row">
                   <div class="col-12 col-sm-6 d-flex justify-content-center">
                     <div class="input-container">
@@ -425,6 +425,8 @@
                   <div class="mensagem-container col-12">
                     <label for="mensagem">Mensagem</label>
                     <textarea id="mensagem" name="mensagem" required></textarea>
+                    
+                    <div class="g-recaptcha" data-sitekey="6LfRjbgpAAAAALx63bg6qazwmsMnmtH4nq-KVeQQ"></div>
 
                     <div class="checkbox-container col-12">
                       <input type="checkbox" id="consentimento" required>
@@ -455,32 +457,40 @@
 
           <div class="container-redes">
             <a href="https://github.com/alvesrony/desafio-most" title="Github" target="_blank">
-              <i class="fa-brands fa-github"></i>
+              <i class="bi bi-github"></i>
             </a>
             
             <a href="https://www.linkedin.com/in/roniesley-alves-6781b8290/" title="Linkedin" target="_blank">
-              <i class="fa-brands fa-linkedin"></i>
+              <i class="bi bi-linkedin"></i>
             </a>
 
             <a href="https://www.instagram.com/alvesrony_/" title="Instagram" target="_blank">
-              <i class="fa-brands fa-instagram"></i>
+              <i class="bi bi-instagram"></i>
             </a>
 
             <a href="mailto:alvesroniesley@gmail.com" title="Email">
-              <i class="fa-regular fa-envelope"></i>
+              <i class="bi bi-envelope"></i>
             </a>
           </div>
             <div class="link-topo">
-              <a href="#principal" id="top-link" title="Topo">
-              <i class="fa-solid fa-arrow-up"></i>
+              <a href="#" id="top-link" title="Topo">
+                <i class="bi bi-arrow-up"></i>
               </a>
             </div>
 
           <div class="texto_rodape">
-            &copy; 2024 - Roniesley Alves
+            <a href="https://portfolio-web.rf.gd" target="_blank">&copy; 2024 - Roniesley Alves</a>
           </div>
         </div>
       </footer>
+
+      <div id="cookie-banner">
+        Este site utiliza cookies para melhorar a sua experiência. Aceita o uso de cookies?
+        <div class="cookie-button">
+          <button id="accept-cookies" class="button-try">Aceitar</button>
+          <button id="reject-cookies" class="button-try">Rejeitar</button>
+        </div>
+      </div>
     </div>
 
 
